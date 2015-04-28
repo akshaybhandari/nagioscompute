@@ -62,7 +62,7 @@ class nagioscompute::setup::commands (
   file_line { "check_vm_states_${hostname}":
     ensure  => present,
     path    => '/etc/nagios/nrpe.d/nrpe_command.cfg',
-    line    => "command[check_vm_states]=${sudo_path} /usr/lib/nagios/plugins/privileged/check_vm_states -s critical",
+    line    => "command[check_vm_states]=${sudo_path} /usr/lib/nagios/plugins/privileged/check_vm_states.sh -s critical",
     require => File['/etc/nagios/nrpe.d/nrpe_command.cfg'],
     notify  => Service['nagios-nrpe-server'],
   }
