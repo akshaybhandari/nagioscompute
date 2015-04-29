@@ -58,7 +58,7 @@ done
 
 if ! which virsh >/dev/null 2>&1
 then
-    echo "virsh command not found"
+    echo "UNKNOWN: virsh command not found"
     exit $STATE_UNKNOWN
 fi
 
